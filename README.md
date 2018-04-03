@@ -1,0 +1,2 @@
+# Notes
+Core data demo
