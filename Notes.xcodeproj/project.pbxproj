@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7032945820747D00003E9F6A /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7032945320747B0A003E9F6A /* Notes.xcdatamodeld */; };
 		7032945B2075B212003E9F6A /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7032945A2075B212003E9F6A /* AddNoteViewController.swift */; };
+		7032945E2075C90B003E9F6A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7032945D2075C90B003E9F6A /* UIViewController.swift */; };
 		70935AC32073866800C05F67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70935AC22073866800C05F67 /* AppDelegate.swift */; };
 		70935AC52073866800C05F67 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70935AC42073866800C05F67 /* NotesViewController.swift */; };
 		70935AC82073866800C05F67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70935AC62073866800C05F67 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		7032945420747B0A003E9F6A /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
 		7032945A2075B212003E9F6A /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
+		7032945D2075C90B003E9F6A /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		70935ABF2073866800C05F67 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70935AC22073866800C05F67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70935AC42073866800C05F67 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 			path = "Add Note View Controller";
 			sourceTree = "<group>";
 		};
+		7032945C2075C8EB003E9F6A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7032945D2075C90B003E9F6A /* UIViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		70935AB62073866800C05F67 = {
 			isa = PBXGroup;
 			children = (
@@ -76,11 +86,12 @@
 		70935AC12073866800C05F67 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				70935AD6207386EC00C05F67 /* Application Delegate */,
+				70935AD4207386C000C05F67 /* View Controllers */,
+				7032945C2075C8EB003E9F6A /* Extensions */,
 				7032945220747AB2003E9F6A /* Core Data */,
 				70935AD82073872E00C05F67 /* Managers */,
-				70935AD6207386EC00C05F67 /* Application Delegate */,
 				70935AD5207386D400C05F67 /* Storyboards */,
-				70935AD4207386C000C05F67 /* View Controllers */,
 				70935AC92073866A00C05F67 /* Assets.xcassets */,
 				70935ACE2073866A00C05F67 /* Info.plist */,
 			);
@@ -202,6 +213,7 @@
 			files = (
 				70935ADA2073875D00C05F67 /* CoreDataManager.swift in Sources */,
 				70935AC52073866800C05F67 /* NotesViewController.swift in Sources */,
+				7032945E2075C90B003E9F6A /* UIViewController.swift in Sources */,
 				70935AC32073866800C05F67 /* AppDelegate.swift in Sources */,
 				7032945B2075B212003E9F6A /* AddNoteViewController.swift in Sources */,
 				7032945820747D00003E9F6A /* Notes.xcdatamodeld in Sources */,

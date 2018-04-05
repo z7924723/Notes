@@ -78,7 +78,11 @@
                         <viewLayoutGuide key="safeArea" id="jMa-HZ-1ya"/>
                     </view>
                     <navigationItem key="navigationItem" id="iUl-80-OMg">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="rzv-kt-hEI"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="rzv-kt-hEI">
+                            <connections>
+                                <action selector="save:" destination="d8Y-yN-kxS" id="pif-WD-PN5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="contentsTextView" destination="hah-DL-Puw" id="mib-8N-Cdj"/>
