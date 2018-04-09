@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import CoreData
 
 class NoteViewController: UIViewController {
   
   // MARK: - Properties
+  @IBOutlet weak var categoryLabel: UILabel!
   @IBOutlet weak var titleTextField: UITextField!
   @IBOutlet weak var contentTextField: UITextView!
+  
+  // MARK: - Segues
+  private enum Segue {
+    static let Categories = "Categories"
+  }
   
   // MARK: -
   var note: Note?
@@ -23,6 +30,8 @@ class NoteViewController: UIViewController {
     title = "Edit Note"
     
     setupView()
+    
+    setupNotificationHandling()
     
   }
   
@@ -45,11 +54,32 @@ class NoteViewController: UIViewController {
     }
   }
   
+  // MARK: - Navigation
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let identifier = segue.identifier else { return }
+    
+    switch identifier {
+    case Segue.Categories:
+      guard let destination = segue.destination as? CategoriesViewController else {
+        return
+      }
+      
+      // Configure Destination
+      destination.note = note
+      
+    default:
+      break
+    }
+  }
+  
+  // MARK: - View Methods
   private func setupView() {
+    setupCategoryLabel()
     setupTitleTextField()
     setupContentsTextView()
   }
   
+  // MARK: -
   private func setupTitleTextField() {
     // Configure Title Text Field
     titleTextField.text = note?.title
@@ -58,6 +88,38 @@ class NoteViewController: UIViewController {
   private func setupContentsTextView() {
     // Configure Contents Text View
     contentTextField.text = note?.contents
+  }
+  
+  private func setupCategoryLabel() {
+    updateCategoryLabel()
+  }
+  
+  private func updateCategoryLabel() {
+    // Configure Category Label
+    categoryLabel.text = note?.category?.name ?? "No Category"
+  }
+  
+  // MARK: - Helper Methods
+  private func setupNotificationHandling() {
+    NotificationCenter.default.addObserver(self,
+                                           selector: #selector(managedObjectContextObjectsDidChange(_:)),
+                                           name: Notification.Name.NSManagedObjectContextObjectsDidChange,
+                                           object: note?.managedObjectContext)
+  }
+  
+  // MARK: - Notification Handling
+  @objc private func managedObjectContextObjectsDidChange(_ notification: Notification) {
+    guard let userInfo = notification.userInfo else {
+      return
+    }
+    
+    guard let updates = userInfo[NSUpdatedObjectsKey] as? Set<NSManagedObject> else {
+      return
+    }
+    
+    if (updates.filter { return $0 == note }).count > 0 {
+      updateCategoryLabel()
+    }
   }
   
   override func didReceiveMemoryWarning() {

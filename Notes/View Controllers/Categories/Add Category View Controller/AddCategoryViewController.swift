@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
 class AddCategoryViewController: UIViewController {
+  
+  
+  // MARK: -
+  var managedObjectContext: NSManagedObjectContext?
   
   override func viewDidLoad() {
     super.viewDidLoad()
