@@ -78,6 +78,25 @@ class CategoriesViewController: UIViewController {
       
       destination.managedObjectContext = note?.managedObjectContext
       
+    case Segue.Category:
+      guard let destination = segue.destination as? CategoryViewController else {
+        return
+      }
+      
+      guard let cell = sender as? UITableViewCell else {
+        return
+      }
+      
+      guard let indexPath = tableView.indexPath(for: cell) else {
+        return
+      }
+      
+      // Fetch Category
+      let category = fetchedResultsController.object(at: indexPath)
+      
+      // Configure Destination
+      destination.category = category
+      
     default:
       break
     }
@@ -170,9 +189,6 @@ extension CategoriesViewController: UITableViewDelegate {
     
     // Update Note
     note?.category = category
-    
-    // Pop View Controller
-    let _ = navigationController?.popViewController(animated: true)
   }
 }
 
