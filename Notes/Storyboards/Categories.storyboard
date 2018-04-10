@@ -45,7 +45,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="F6B-6b-LwD" kind="show" identifier="Category" id="row-am-fpB"/>
+                                            <segue destination="F6B-6b-LwD" kind="show" identifier="Category" trigger="accessoryAction" id="VCz-aM-FCj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

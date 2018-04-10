@@ -189,6 +189,9 @@ extension CategoriesViewController: UITableViewDelegate {
     
     // Update Note
     note?.category = category
+    
+    // Pop View Controller
+    let _ = navigationController?.popViewController(animated: true)
   }
 }
 
