@@ -177,5 +177,38 @@ extension CategoriesViewController: UITableViewDelegate {
 }
 
 extension CategoriesViewController: NSFetchedResultsControllerDelegate {
+  func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    tableView.beginUpdates()
+  }
   
+  func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+    tableView.endUpdates()
+    
+    updateView()
+  }
+  
+  func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+    switch (type) {
+    case .insert:
+      if let indexPath = newIndexPath {
+        tableView.insertRows(at: [indexPath], with: .fade)
+      }
+    case .delete:
+      if let indexPath = indexPath {
+        tableView.deleteRows(at: [indexPath], with: .fade)
+      }
+    case .update:
+      if let indexPath = indexPath, let cell = tableView.cellForRow(at: indexPath) {
+        configure(cell, at: indexPath)
+      }
+    case .move:
+      if let indexPath = indexPath {
+        tableView.deleteRows(at: [indexPath], with: .fade)
+      }
+      
+      if let newIndexPath = newIndexPath {
+        tableView.insertRows(at: [newIndexPath], with: .fade)
+      }
+    }
+  }
 }
