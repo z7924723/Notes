@@ -20,7 +20,7 @@
 		70762C06207BB25100D073ED /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70762C05207BB25100D073ED /* UIColor.swift */; };
 		70935AC32073866800C05F67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70935AC22073866800C05F67 /* AppDelegate.swift */; };
 		70935AC52073866800C05F67 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70935AC42073866800C05F67 /* NotesViewController.swift */; };
-		70935AC82073866800C05F67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70935AC62073866800C05F67 /* Main.storyboard */; };
+		70935AC82073866800C05F67 /* Notes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70935AC62073866800C05F67 /* Notes.storyboard */; };
 		70935ACA2073866A00C05F67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70935AC92073866A00C05F67 /* Assets.xcassets */; };
 		70935ACD2073866A00C05F67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70935ACB2073866A00C05F67 /* LaunchScreen.storyboard */; };
 		70935ADA2073875D00C05F67 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70935AD92073875D00C05F67 /* CoreDataManager.swift */; };
@@ -41,7 +41,7 @@
 		70935ABF2073866800C05F67 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70935AC22073866800C05F67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		70935AC42073866800C05F67 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
-		70935AC72073866800C05F67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		70935AC72073866800C05F67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Notes.storyboard; sourceTree = "<group>"; };
 		70935AC92073866A00C05F67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70935ACC2073866A00C05F67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70935ACE2073866A00C05F67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				70662C75207B59FC00521B99 /* Categories View Controller */,
-				70662C78207B5DEA00521B99 /* Catageory View Controller */,
+				70662C78207B5DEA00521B99 /* Categeory View Controller */,
 				70662C7B207B6E5000521B99 /* Add Category View Controller */,
 			);
 			path = Categories;
@@ -137,12 +137,12 @@
 			path = "Categories View Controller";
 			sourceTree = "<group>";
 		};
-		70662C78207B5DEA00521B99 /* Catageory View Controller */ = {
+		70662C78207B5DEA00521B99 /* Categeory View Controller */ = {
 			isa = PBXGroup;
 			children = (
 				70662C79207B5E1A00521B99 /* CategoryViewController.swift */,
 			);
-			path = "Catageory View Controller";
+			path = "Categeory View Controller";
 			sourceTree = "<group>";
 		};
 		70662C7B207B6E5000521B99 /* Add Category View Controller */ = {
@@ -196,7 +196,7 @@
 		70935AD5207386D400C05F67 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				70935AC62073866800C05F67 /* Main.storyboard */,
+				70935AC62073866800C05F67 /* Notes.storyboard */,
 				70662C71207B551900521B99 /* Categories.storyboard */,
 				70935ACB2073866A00C05F67 /* LaunchScreen.storyboard */,
 			);
@@ -289,7 +289,7 @@
 				70935ACD2073866A00C05F67 /* LaunchScreen.storyboard in Resources */,
 				70935ACA2073866A00C05F67 /* Assets.xcassets in Resources */,
 				70662C72207B551900521B99 /* Categories.storyboard in Resources */,
-				70935AC82073866800C05F67 /* Main.storyboard in Resources */,
+				70935AC82073866800C05F67 /* Notes.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,12 +319,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		70935AC62073866800C05F67 /* Main.storyboard */ = {
+		70935AC62073866800C05F67 /* Notes.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				70935AC72073866800C05F67 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Notes.storyboard;
 			sourceTree = "<group>";
 		};
 		70935ACB2073866A00C05F67 /* LaunchScreen.storyboard */ = {
