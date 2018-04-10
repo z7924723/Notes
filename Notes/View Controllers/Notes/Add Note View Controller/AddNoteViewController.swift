@@ -20,6 +20,8 @@ class AddNoteViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    setupView()
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -27,6 +29,18 @@ class AddNoteViewController: UIViewController {
     
     // Show Keyboard
     titleTextField.becomeFirstResponder()
+  }
+  
+  // MARK: - View Methods
+  private func setupView() {
+    setupContentsTextView()
+  }
+  
+  // MARK: -
+  private func setupContentsTextView() {
+    contentsTextView.delegate = self
+    contentsTextView.text = "Input note text here."
+    contentsTextView.textColor = UIColor.lightGray
   }
   
   // MARK: - Actions
@@ -50,4 +64,22 @@ class AddNoteViewController: UIViewController {
     _ = navigationController?.popViewController(animated: true)
   }
   
+}
+
+extension AddNoteViewController: UITextViewDelegate {
+  
+  func textViewDidBeginEditing(_ textView: UITextView) {
+    if contentsTextView.textColor == UIColor.lightGray {
+      contentsTextView.text = ""
+      contentsTextView.textColor = UIColor.black
+    }
+  }
+  
+  func textViewDidEndEditing(_ textView: UITextView) {
+    if contentsTextView.text == "" {
+      contentsTextView.text = "Input note text here."
+      contentsTextView.textColor = UIColor.lightGray
+    }
+  }
+
 }
