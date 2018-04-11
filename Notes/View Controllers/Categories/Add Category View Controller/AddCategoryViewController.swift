@@ -14,9 +14,10 @@ class AddCategoryViewController: UIViewController {
   // MARK: - Properties
   @IBOutlet weak var nameTextField: UITextField!
   
-  // MARK: - View Life Cycle
+  // MARK: -
   var managedObjectContext: NSManagedObjectContext?
   
+  // MARK: - View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     

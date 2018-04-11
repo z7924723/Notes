@@ -104,19 +104,19 @@
 			path = Extenstions;
 			sourceTree = "<group>";
 		};
-		70662C6E207767E200521B99 /* Note View Cotroller */ = {
+		70662C6E207767E200521B99 /* Note View Controller */ = {
 			isa = PBXGroup;
 			children = (
 				70662C6F2077681900521B99 /* NoteViewController.swift */,
 			);
-			path = "Note View Cotroller";
+			path = "Note View Controller";
 			sourceTree = "<group>";
 		};
 		70662C73207B597800521B99 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
 				70935AD72073870100C05F67 /* Notes View Controller */,
-				70662C6E207767E200521B99 /* Note View Cotroller */,
+				70662C6E207767E200521B99 /* Note View Controller */,
 				703294592075B1EC003E9F6A /* Add Note View Controller */,
 			);
 			path = Notes;
@@ -126,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				70662C75207B59FC00521B99 /* Categories View Controller */,
-				70662C78207B5DEA00521B99 /* Categeory View Controller */,
+				70662C78207B5DEA00521B99 /* Category View Controller */,
 				70662C7B207B6E5000521B99 /* Add Category View Controller */,
 			);
 			path = Categories;
@@ -140,13 +140,13 @@
 			path = "Categories View Controller";
 			sourceTree = "<group>";
 		};
-		70662C78207B5DEA00521B99 /* Categeory View Controller */ = {
+		70662C78207B5DEA00521B99 /* Category View Controller */ = {
 			isa = PBXGroup;
 			children = (
 				70662C79207B5E1A00521B99 /* CategoryViewController.swift */,
 				70B686FE207D0DDB0086B15B /* Color View Controller */,
 			);
-			path = "Categeory View Controller";
+			path = "Category View Controller";
 			sourceTree = "<group>";
 		};
 		70662C7B207B6E5000521B99 /* Add Category View Controller */ = {
@@ -191,6 +191,7 @@
 		70935AD4207386C000C05F67 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				70B6870A207E03D80086B15B /* Tags */,
 				70662C74207B599100521B99 /* Categories */,
 				70662C73207B597800521B99 /* Notes */,
 			);
@@ -238,6 +239,37 @@
 				70B686FF207D0DF50086B15B /* ColorViewController.swift */,
 			);
 			path = "Color View Controller";
+			sourceTree = "<group>";
+		};
+		70B6870A207E03D80086B15B /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				70B6870B207E03F20086B15B /* Tag View Controller */,
+				70B6870C207E03FF0086B15B /* Tags View Controller */,
+				70B6870D207E04150086B15B /* Add Tag View Controller */,
+			);
+			path = Tags;
+			sourceTree = "<group>";
+		};
+		70B6870B207E03F20086B15B /* Tag View Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Tag View Controller";
+			sourceTree = "<group>";
+		};
+		70B6870C207E03FF0086B15B /* Tags View Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Tags View Controller";
+			sourceTree = "<group>";
+		};
+		70B6870D207E04150086B15B /* Add Tag View Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Add Tag View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
