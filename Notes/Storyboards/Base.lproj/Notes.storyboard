@@ -183,7 +183,7 @@
                     </view>
                     <connections>
                         <outlet property="categoryLabel" destination="R8t-sp-8uj" id="gQW-Iw-YiK"/>
-                        <outlet property="contentTextField" destination="EaF-1Z-ykA" id="PfD-Oy-a3O"/>
+                        <outlet property="contentsTextView" destination="EaF-1Z-ykA" id="8El-y2-82D"/>
                         <outlet property="titleTextField" destination="rGt-I0-Lnt" id="Q5o-0k-DBc"/>
                     </connections>
                 </viewController>

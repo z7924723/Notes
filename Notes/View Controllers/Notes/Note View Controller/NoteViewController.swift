@@ -14,7 +14,7 @@ class NoteViewController: UIViewController {
   // MARK: - Properties
   @IBOutlet weak var categoryLabel: UILabel!
   @IBOutlet weak var titleTextField: UITextField!
-  @IBOutlet weak var contentTextField: UITextView!
+  @IBOutlet weak var contentsTextView: UITextView!
   
   // MARK: - Segues
   private enum Segue {
@@ -47,8 +47,8 @@ class NoteViewController: UIViewController {
     }
     
     // Update Contents
-    if note.contents != contentTextField.text {
-      note.contents = contentTextField.text
+    if note.contents != contentsTextView.text {
+      note.contents = contentsTextView.text
     }
     
     // Update Updated At
@@ -90,7 +90,7 @@ class NoteViewController: UIViewController {
   
   private func setupContentsTextView() {
     // Configure Contents Text View
-    contentTextField.text = note?.contents
+    contentsTextView.text = note?.contents
   }
   
   private func setupCategoryLabel() {
