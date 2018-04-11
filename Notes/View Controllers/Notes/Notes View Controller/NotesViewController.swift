@@ -11,6 +11,7 @@ import CoreData
 
 class NotesViewController: UIViewController {
   
+  // MARK: - Properties
   @IBOutlet weak var messageLabel: UILabel!
   @IBOutlet weak var tableView: UITableView!
   
@@ -21,11 +22,7 @@ class NotesViewController: UIViewController {
   }
   
   // MARK: -
-  var notes: [Note]? {
-    didSet {
-      updateView()
-    }
-  }
+  private var coreDataManager = CoreDataManager(modelName: "Notes")
   
   // MARK: -
   private lazy var fetchedResultsController: NSFetchedResultsController<Note> = {
@@ -49,15 +46,12 @@ class NotesViewController: UIViewController {
   
   // MARK: -
   private var hasNotes: Bool {
-    guard let fetchObjects = fetchedResultsController.fetchedObjects else {
+    guard let fetchedObjects = fetchedResultsController.fetchedObjects else {
       return false
     }
     
-    return fetchObjects.count > 0
+    return fetchedObjects.count > 0
   }
-  
-  // MARK: - Properties
-  private var coreDataManager = CoreDataManager(modelName: "Notes")
   
   // MARK: -
   private let estimatedRowHeight = CGFloat(44.0)
@@ -69,6 +63,7 @@ class NotesViewController: UIViewController {
     return dateFormatter
   }()
   
+  // MARK: - View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
