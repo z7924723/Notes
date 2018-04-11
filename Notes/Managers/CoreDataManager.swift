@@ -52,8 +52,16 @@ final class CoreDataManager {
     let persistentStoreURL = documentsDirectoryURL.appendingPathComponent(storeName)
     
     do {
+      let options = [
+                      NSMigratePersistentStoresAutomaticallyOption: true,
+                      NSInferMappingModelAutomaticallyOption: true
+                    ]
+      
       // Add Persistent Store
-      try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: persistentStoreURL, options: nil)
+      try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType,
+                                                        configurationName: nil,
+                                                        at: persistentStoreURL,
+                                                        options: options)
       
     } catch {
       fatalError("Unable to Add Persistent Store")
