@@ -25,6 +25,7 @@
 		70935ACD2073866A00C05F67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70935ACB2073866A00C05F67 /* LaunchScreen.storyboard */; };
 		70935ADA2073875D00C05F67 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70935AD92073875D00C05F67 /* CoreDataManager.swift */; };
 		70B68700207D0DF50086B15B /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B686FF207D0DF50086B15B /* ColorViewController.swift */; };
+		70B6870F207E69BE0086B15B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B6870E207E69BE0086B15B /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		70935AD92073875D00C05F67 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		70B686FF207D0DF50086B15B /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		70B68709207DF4A60086B15B /* Notes 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Notes 2.xcdatamodel"; sourceTree = "<group>"; };
+		70B6870E207E69BE0086B15B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				70662C6C2076115600521B99 /* Note.swift */,
+				70B6870E207E69BE0086B15B /* Category.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				7032945B2075B212003E9F6A /* AddNoteViewController.swift in Sources */,
 				70662C7D207B6E8300521B99 /* AddCategoryViewController.swift in Sources */,
 				70762C06207BB25100D073ED /* UIColor.swift in Sources */,
+				70B6870F207E69BE0086B15B /* Category.swift in Sources */,
 				70662C6A207605F700521B99 /* NoteTableViewCell.swift in Sources */,
 				70662C7A207B5E1A00521B99 /* CategoryViewController.swift in Sources */,
 				7032945820747D00003E9F6A /* Notes.xcdatamodeld in Sources */,

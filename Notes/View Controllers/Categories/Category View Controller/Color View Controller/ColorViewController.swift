@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ColorViewControllerDelegate {
+  func controller(_ controller: ColorViewController, didPick color: UIColor)
+}
+
 class ColorViewController: UIViewController {
   
   // MARK: - Properties
@@ -16,6 +20,9 @@ class ColorViewController: UIViewController {
   @IBOutlet weak var redSlider: UISlider!
   @IBOutlet weak var blueSlider: UISlider!
   @IBOutlet weak var greenSlider: UISlider!
+  
+  // MARK: -
+  var delegate: ColorViewControllerDelegate?
   
   // MARK: -
   var color: UIColor = .white
@@ -32,6 +39,8 @@ class ColorViewController: UIViewController {
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     
+    // Notify Delegate
+    delegate?.controller(self, didPick: (colorView.backgroundColor ?? .white))
   }
   
   // MARK: - View Methods
@@ -58,6 +67,10 @@ class ColorViewController: UIViewController {
   }
   
   private func setupColorView() {
+    updateColorView()
+  }
+  
+  private func updateColorView() {
     // Create Color
     let color = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1.0)
     
@@ -68,5 +81,11 @@ class ColorViewController: UIViewController {
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+  }
+  
+  // MARK: - Actions
+  @IBAction func colorDidChange(_ sender: UISlider) {
+    // Update View
+    updateColorView()
   }
 }

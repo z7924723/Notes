@@ -32,7 +32,7 @@ class NotesViewController: UIViewController {
     // Configure Fetch Request
     fetchRequest.sortDescriptors = [NSSortDescriptor(key: #keyPath(Note.updatedAt), ascending: false)]
     
-    // Create Fetched Result Controller
+    // Create Fetched Results Controller
     let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
                                                               managedObjectContext: self.coreDataManager.managedObjectContext,
                                                               sectionNameKeyPath: nil,

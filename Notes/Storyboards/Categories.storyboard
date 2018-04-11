@@ -143,6 +143,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="qRa-qA-luq" appends="YES" id="SV3-v2-Wb9"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -156,6 +159,7 @@
                         <viewLayoutGuide key="safeArea" id="7X1-mm-xBP"/>
                     </view>
                     <connections>
+                        <outlet property="colorView" destination="fh2-zA-nY1" id="0zi-FU-OBx"/>
                         <outlet property="nameTextField" destination="ixc-yj-YWP" id="545-aa-Zmi"/>
                     </connections>
                 </viewController>
@@ -178,9 +182,15 @@
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="FFu-Vv-72h" userLabel="Green Slider">
                                 <rect key="frame" x="18" y="66" width="339" height="31"/>
+                                <connections>
+                                    <action selector="colorDidChange:" destination="tgL-ka-xbZ" eventType="valueChanged" id="Zuy-qB-9MJ"/>
+                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8it-Mm-MjO" userLabel="Blue Slider">
                                 <rect key="frame" x="18" y="104" width="339" height="31"/>
+                                <connections>
+                                    <action selector="colorDidChange:" destination="tgL-ka-xbZ" eventType="valueChanged" id="4XQ-xn-LtK"/>
+                                </connections>
                             </slider>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJg-fO-rlM" userLabel="Color View">
                                 <rect key="frame" x="20" y="154" width="335" height="44"/>
@@ -188,9 +198,20 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="gxI-3f-705"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <real key="value" value="0.10000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8NF-He-PdG" userLabel="Red Slider">
                                 <rect key="frame" x="18" y="28" width="339" height="31"/>
+                                <connections>
+                                    <action selector="colorDidChange:" destination="tgL-ka-xbZ" eventType="valueChanged" id="Efi-fW-6Ns"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
