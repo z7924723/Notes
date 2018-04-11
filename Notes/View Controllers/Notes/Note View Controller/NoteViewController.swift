@@ -24,6 +24,7 @@ class NoteViewController: UIViewController {
   // MARK: -
   var note: Note?
   
+  // MARK: - View Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -35,22 +36,24 @@ class NoteViewController: UIViewController {
     
   }
   
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    guard let note = note else { return }
     
     // Update Title
-    if let title = titleTextField.text, !title.isEmpty && note?.title != title {
-      note?.title = title
+    if let title = titleTextField.text, !title.isEmpty && note.title != title {
+      note.title = title
     }
     
     // Update Contents
-    if note?.contents != contentTextField.text {
-      note?.contents = contentTextField.text
+    if note.contents != contentTextField.text {
+      note.contents = contentTextField.text
     }
     
     // Update Updated At
-    if (note?.isUpdated)! {
-      note?.updatedAt = Date()
+    if note.isUpdated {
+      note.updatedAt = Date()
     }
   }
   
