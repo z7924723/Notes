@@ -24,6 +24,7 @@
 		70935ACA2073866A00C05F67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70935AC92073866A00C05F67 /* Assets.xcassets */; };
 		70935ACD2073866A00C05F67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70935ACB2073866A00C05F67 /* LaunchScreen.storyboard */; };
 		70935ADA2073875D00C05F67 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70935AD92073875D00C05F67 /* CoreDataManager.swift */; };
+		70B68700207D0DF50086B15B /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B686FF207D0DF50086B15B /* ColorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		70935ACC2073866A00C05F67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70935ACE2073866A00C05F67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70935AD92073875D00C05F67 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		70B686FF207D0DF50086B15B /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				70662C79207B5E1A00521B99 /* CategoryViewController.swift */,
+				70B686FE207D0DDB0086B15B /* Color View Controller */,
 			);
 			path = "Categeory View Controller";
 			sourceTree = "<group>";
@@ -228,6 +231,14 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		70B686FE207D0DDB0086B15B /* Color View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				70B686FF207D0DF50086B15B /* ColorViewController.swift */,
+			);
+			path = "Color View Controller";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,6 +315,7 @@
 				70935AC52073866800C05F67 /* NotesViewController.swift in Sources */,
 				7032945E2075C90B003E9F6A /* UIViewController.swift in Sources */,
 				70662C6D2076115600521B99 /* Note.swift in Sources */,
+				70B68700207D0DF50086B15B /* ColorViewController.swift in Sources */,
 				70662C77207B5A3A00521B99 /* CategoriesViewController.swift in Sources */,
 				70662C702077681900521B99 /* NoteViewController.swift in Sources */,
 				70935AC32073866800C05F67 /* AppDelegate.swift in Sources */,
