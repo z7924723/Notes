@@ -21,6 +21,8 @@ class AddNoteViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    title = "Add Note"
+    
     setupView()
   }
   

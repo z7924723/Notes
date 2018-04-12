@@ -180,14 +180,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8NF-He-PdG" userLabel="Red Slider">
+                                <rect key="frame" x="79" y="28" width="278" height="31"/>
+                                <connections>
+                                    <action selector="colorDidChange:" destination="tgL-ka-xbZ" eventType="valueChanged" id="Efi-fW-6Ns"/>
+                                </connections>
+                            </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="FFu-Vv-72h" userLabel="Green Slider">
-                                <rect key="frame" x="18" y="66" width="339" height="31"/>
+                                <rect key="frame" x="79" y="66" width="278" height="31"/>
                                 <connections>
                                     <action selector="colorDidChange:" destination="tgL-ka-xbZ" eventType="valueChanged" id="Zuy-qB-9MJ"/>
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8it-Mm-MjO" userLabel="Blue Slider">
-                                <rect key="frame" x="18" y="104" width="339" height="31"/>
+                                <rect key="frame" x="79" y="104" width="278" height="31"/>
                                 <connections>
                                     <action selector="colorDidChange:" destination="tgL-ka-xbZ" eventType="valueChanged" id="4XQ-xn-LtK"/>
                                 </connections>
@@ -207,27 +213,46 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8NF-He-PdG" userLabel="Red Slider">
-                                <rect key="frame" x="18" y="28" width="339" height="31"/>
-                                <connections>
-                                    <action selector="colorDidChange:" destination="tgL-ka-xbZ" eventType="valueChanged" id="Efi-fW-6Ns"/>
-                                </connections>
-                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Red" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeV-Jr-w15" userLabel="Red Label">
+                                <rect key="frame" x="20" y="33" width="30" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Green" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZx-Vf-Gnd" userLabel="Green Label">
+                                <rect key="frame" x="20" y="70" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgf-qT-OqD" userLabel="Blue Label">
+                                <rect key="frame" x="20" y="109" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8NF-He-PdG" firstAttribute="top" secondItem="nA1-0n-yB2" secondAttribute="top" constant="8" id="0OL-A6-P0g"/>
-                            <constraint firstItem="FFu-Vv-72h" firstAttribute="leading" secondItem="nA1-0n-yB2" secondAttribute="leading" constant="20" id="Dpg-Jj-NTJ"/>
-                            <constraint firstItem="nA1-0n-yB2" firstAttribute="trailing" secondItem="FFu-Vv-72h" secondAttribute="trailing" constant="20" id="IFS-kO-4Qo"/>
+                            <constraint firstItem="nA1-0n-yB2" firstAttribute="trailing" secondItem="8it-Mm-MjO" secondAttribute="trailing" constant="20" id="25L-DT-n7p"/>
+                            <constraint firstItem="FFu-Vv-72h" firstAttribute="leading" secondItem="fZx-Vf-Gnd" secondAttribute="trailing" constant="14" id="4AN-Fr-Ni0"/>
+                            <constraint firstItem="FFu-Vv-72h" firstAttribute="leading" secondItem="fZx-Vf-Gnd" secondAttribute="trailing" constant="14" id="5MT-Lr-iEw"/>
+                            <constraint firstItem="nA1-0n-yB2" firstAttribute="trailing" secondItem="8NF-He-PdG" secondAttribute="trailing" constant="20" id="7KQ-tt-eT2"/>
+                            <constraint firstItem="fZx-Vf-Gnd" firstAttribute="leading" secondItem="nA1-0n-yB2" secondAttribute="leading" constant="20" id="FvV-ob-Kvw"/>
+                            <constraint firstItem="mJg-fO-rlM" firstAttribute="top" secondItem="8it-Mm-MjO" secondAttribute="bottom" constant="20" id="IhT-0r-dI4"/>
                             <constraint firstItem="nA1-0n-yB2" firstAttribute="trailing" secondItem="mJg-fO-rlM" secondAttribute="trailing" constant="20" id="JIm-f0-2D1"/>
-                            <constraint firstItem="8it-Mm-MjO" firstAttribute="leading" secondItem="nA1-0n-yB2" secondAttribute="leading" constant="20" id="OcI-Rm-Oy6"/>
-                            <constraint firstItem="nA1-0n-yB2" firstAttribute="trailing" secondItem="8it-Mm-MjO" secondAttribute="trailing" constant="20" id="QcU-kk-zOJ"/>
-                            <constraint firstItem="mJg-fO-rlM" firstAttribute="top" secondItem="8it-Mm-MjO" secondAttribute="bottom" constant="20" id="dFw-1L-fJn"/>
+                            <constraint firstItem="fZx-Vf-Gnd" firstAttribute="top" secondItem="aeV-Jr-w15" secondAttribute="bottom" constant="16" id="W02-ok-aU0"/>
+                            <constraint firstItem="8it-Mm-MjO" firstAttribute="leading" secondItem="Lgf-qT-OqD" secondAttribute="trailing" constant="27" id="YWf-kd-QHM"/>
+                            <constraint firstItem="8it-Mm-MjO" firstAttribute="top" secondItem="FFu-Vv-72h" secondAttribute="bottom" constant="8" id="cf9-pK-wux"/>
                             <constraint firstItem="mJg-fO-rlM" firstAttribute="leading" secondItem="nA1-0n-yB2" secondAttribute="leading" constant="20" id="db3-0W-bd7"/>
-                            <constraint firstItem="nA1-0n-yB2" firstAttribute="trailing" secondItem="8NF-He-PdG" secondAttribute="trailing" constant="20" id="f1H-bR-Pt8"/>
-                            <constraint firstItem="FFu-Vv-72h" firstAttribute="top" secondItem="8NF-He-PdG" secondAttribute="bottom" constant="8" id="kUX-qH-cnf"/>
-                            <constraint firstItem="8it-Mm-MjO" firstAttribute="top" secondItem="FFu-Vv-72h" secondAttribute="bottom" constant="8" id="p75-DD-S6h"/>
-                            <constraint firstItem="8NF-He-PdG" firstAttribute="leading" secondItem="nA1-0n-yB2" secondAttribute="leading" constant="20" id="wnL-l4-Tmb"/>
+                            <constraint firstItem="FFu-Vv-72h" firstAttribute="top" secondItem="8NF-He-PdG" secondAttribute="bottom" constant="8" id="dcV-Iq-1gA"/>
+                            <constraint firstItem="Lgf-qT-OqD" firstAttribute="leading" secondItem="nA1-0n-yB2" secondAttribute="leading" constant="20" id="fRm-px-PTC"/>
+                            <constraint firstItem="nA1-0n-yB2" firstAttribute="trailing" secondItem="FFu-Vv-72h" secondAttribute="trailing" constant="20" id="hQ8-Ha-Fn5"/>
+                            <constraint firstItem="Lgf-qT-OqD" firstAttribute="top" secondItem="fZx-Vf-Gnd" secondAttribute="bottom" constant="18" id="lrr-HT-WEA"/>
+                            <constraint firstItem="aeV-Jr-w15" firstAttribute="leading" secondItem="nA1-0n-yB2" secondAttribute="leading" constant="20" id="mzn-Gm-SNx"/>
+                            <constraint firstItem="aeV-Jr-w15" firstAttribute="top" secondItem="nA1-0n-yB2" secondAttribute="top" constant="13" id="oRD-Kf-Loz"/>
+                            <constraint firstItem="8NF-He-PdG" firstAttribute="top" secondItem="nA1-0n-yB2" secondAttribute="top" constant="8" id="rxO-Cn-xoh"/>
+                            <constraint firstItem="8NF-He-PdG" firstAttribute="leading" secondItem="aeV-Jr-w15" secondAttribute="trailing" constant="31" id="yKM-5w-cjT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nA1-0n-yB2"/>
                     </view>
@@ -240,7 +265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5m-tW-rck" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5383" y="528"/>
+            <point key="canvasLocation" x="5381.6000000000004" y="527.58620689655174"/>
         </scene>
     </scenes>
 </document>
