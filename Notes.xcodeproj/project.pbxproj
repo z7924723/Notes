@@ -68,7 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				7032945320747B0A003E9F6A /* Notes.xcdatamodeld */,
-				70662C6B2076113700521B99 /* Extenstions */,
+				70662C6B2076113700521B99 /* Extensions */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -98,13 +98,13 @@
 			path = "Table View Cells";
 			sourceTree = "<group>";
 		};
-		70662C6B2076113700521B99 /* Extenstions */ = {
+		70662C6B2076113700521B99 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				70662C6C2076115600521B99 /* Note.swift */,
 				70B6870E207E69BE0086B15B /* Category.swift */,
 			);
-			path = Extenstions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		70662C6E207767E200521B99 /* Note View Controller */ = {
