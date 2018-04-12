@@ -17,7 +17,9 @@ class NoteTableViewCell: UITableViewCell {
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var contentsLabel: UILabel!
   @IBOutlet weak var updatedAtLabel: UILabel!
+  @IBOutlet weak var categoryColorView: UIView!
   
+  // MARK: - Initialization
   override func awakeFromNib() {
     super.awakeFromNib()
     // Initialization code
