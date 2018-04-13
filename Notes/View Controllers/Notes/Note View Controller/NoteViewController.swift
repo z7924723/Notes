@@ -12,12 +12,14 @@ import CoreData
 class NoteViewController: UIViewController {
   
   // MARK: - Properties
+  @IBOutlet weak var tagsLabel: UILabel!
   @IBOutlet weak var categoryLabel: UILabel!
   @IBOutlet weak var titleTextField: UITextField!
   @IBOutlet weak var contentsTextView: UITextView!
   
   // MARK: - Segues
   private enum Segue {
+    static let Tags = "Tags"
     static let Categories = "Categories"
   }
   
@@ -64,6 +66,14 @@ class NoteViewController: UIViewController {
     switch identifier {
     case Segue.Categories:
       guard let destination = segue.destination as? CategoriesViewController else {
+        return
+      }
+      
+      // Configure Destination
+      destination.note = note
+      
+    case Segue.Tags:
+      guard let destination = segue.destination as? TagsViewController else {
         return
       }
       

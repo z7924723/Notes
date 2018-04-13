@@ -26,6 +26,10 @@
 		70935ADA2073875D00C05F67 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70935AD92073875D00C05F67 /* CoreDataManager.swift */; };
 		70B68700207D0DF50086B15B /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B686FF207D0DF50086B15B /* ColorViewController.swift */; };
 		70B6870F207E69BE0086B15B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B6870E207E69BE0086B15B /* Category.swift */; };
+		70B68711207F5AF50086B15B /* Tags.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70B68710207F5AF50086B15B /* Tags.storyboard */; };
+		70B68713207F5E590086B15B /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B68712207F5E590086B15B /* TagsViewController.swift */; };
+		70B68715207F60130086B15B /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B68714207F60130086B15B /* TagViewController.swift */; };
+		70B68717207F60CB0086B15B /* AddTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B68716207F60CB0086B15B /* AddTagViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +55,10 @@
 		70B686FF207D0DF50086B15B /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
 		70B68709207DF4A60086B15B /* Notes 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Notes 2.xcdatamodel"; sourceTree = "<group>"; };
 		70B6870E207E69BE0086B15B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		70B68710207F5AF50086B15B /* Tags.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tags.storyboard; sourceTree = "<group>"; };
+		70B68712207F5E590086B15B /* TagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
+		70B68714207F60130086B15B /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
+		70B68716207F60CB0086B15B /* AddTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +215,7 @@
 				70935AC62073866800C05F67 /* Notes.storyboard */,
 				70662C71207B551900521B99 /* Categories.storyboard */,
 				70935ACB2073866A00C05F67 /* LaunchScreen.storyboard */,
+				70B68710207F5AF50086B15B /* Tags.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -257,6 +266,7 @@
 		70B6870B207E03F20086B15B /* Tag View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				70B68714207F60130086B15B /* TagViewController.swift */,
 			);
 			path = "Tag View Controller";
 			sourceTree = "<group>";
@@ -264,6 +274,7 @@
 		70B6870C207E03FF0086B15B /* Tags View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				70B68712207F5E590086B15B /* TagsViewController.swift */,
 			);
 			path = "Tags View Controller";
 			sourceTree = "<group>";
@@ -271,6 +282,7 @@
 		70B6870D207E04150086B15B /* Add Tag View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				70B68716207F60CB0086B15B /* AddTagViewController.swift */,
 			);
 			path = "Add Tag View Controller";
 			sourceTree = "<group>";
@@ -334,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70935ACD2073866A00C05F67 /* LaunchScreen.storyboard in Resources */,
+				70B68711207F5AF50086B15B /* Tags.storyboard in Resources */,
 				70935ACA2073866A00C05F67 /* Assets.xcassets in Resources */,
 				70662C72207B551900521B99 /* Categories.storyboard in Resources */,
 				70935AC82073866800C05F67 /* Notes.storyboard in Resources */,
@@ -348,8 +361,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				70935ADA2073875D00C05F67 /* CoreDataManager.swift in Sources */,
+				70B68713207F5E590086B15B /* TagsViewController.swift in Sources */,
 				70935AC52073866800C05F67 /* NotesViewController.swift in Sources */,
+				70B68715207F60130086B15B /* TagViewController.swift in Sources */,
 				7032945E2075C90B003E9F6A /* UIViewController.swift in Sources */,
+				70B68717207F60CB0086B15B /* AddTagViewController.swift in Sources */,
 				70662C6D2076115600521B99 /* Note.swift in Sources */,
 				70B68700207D0DF50086B15B /* ColorViewController.swift in Sources */,
 				70662C77207B5A3A00521B99 /* CategoriesViewController.swift in Sources */,
