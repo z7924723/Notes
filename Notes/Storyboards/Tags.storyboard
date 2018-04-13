@@ -18,17 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPD-hd-vVx" userLabel="Message Label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPD-hd-vVx" userLabel="Message Label">
                                 <rect key="frame" x="20" y="333" width="335" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ohu-Tx-bPY">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" textLabel="VqJ-Hc-tiH" style="IBUITableViewCellStyleDefault" id="fig-m7-sRe">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="TagTableViewCell" textLabel="VqJ-Hc-tiH" style="IBUITableViewCellStyleDefault" id="fig-m7-sRe">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fig-m7-sRe" id="fBt-Ol-sCW">
@@ -51,6 +51,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="UF8-6U-GaU" id="gVj-vg-l0p"/>
+                                    <outlet property="delegate" destination="UF8-6U-GaU" id="Qrs-Ub-BSb"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -105,10 +106,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TwR-w4-qR2"/>
                     </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="K4f-HR-02j" id="2qk-4d-8NR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eE9-Dt-FSx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1545" y="-326"/>
+            <point key="canvasLocation" x="1545" y="-357"/>
         </scene>
         <!--Tag View Controller-->
         <scene sceneID="agD-Wj-wzS">
@@ -136,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jhi-HA-rCj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1545" y="374"/>
+            <point key="canvasLocation" x="1545" y="363"/>
         </scene>
     </scenes>
 </document>

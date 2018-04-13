@@ -87,9 +87,20 @@ class NoteViewController: UIViewController {
   
   // MARK: - View Methods
   private func setupView() {
+    setupTagsLabel()
     setupCategoryLabel()
     setupTitleTextField()
     setupContentsTextView()
+  }
+  
+  // MARK: -
+  private func setupTagsLabel() {
+    updateTagsLabel()
+  }
+  
+  private func updateTagsLabel() {
+    // Configure Tags Label
+    tagsLabel.text = note?.alphabetizedTagsAsString ?? "No Tags"
   }
   
   // MARK: -
@@ -132,6 +143,7 @@ class NoteViewController: UIViewController {
     
     if (updates.filter { return $0 == note }).count > 0 {
       updateCategoryLabel()
+      updateTagsLabel()
     }
   }
   
