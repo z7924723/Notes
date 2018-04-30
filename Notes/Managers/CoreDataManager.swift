@@ -13,11 +13,19 @@ final class CoreDataManager {
   private let modelName: String
   
   // MARK: -
-  private(set) lazy var managedObjectContext: NSManagedObjectContext = {
+  private(set) lazy var mainManagedObjectContext: NSManagedObjectContext = {
     // Initialize Managed Object Context
     let managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
     
     // Configure Managed Object Context
+    managedObjectContext.parent = self.privateManagedObjectContext
+    
+    return managedObjectContext
+  }()
+  
+  private lazy var privateManagedObjectContext: NSManagedObjectContext = {
+    let managedObjectContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+    
     managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator
     
     return managedObjectContext
@@ -92,14 +100,27 @@ final class CoreDataManager {
   
   // MARK: -
   @objc private func saveChanges(_ notification: Notification) {
-    guard managedObjectContext.hasChanges else { return }
-    
-    do {
-      try managedObjectContext.save()
-    } catch {
-      print("Unable to Save Managed Object Context")
-      print("\(error), \(error.localizedDescription)")
+    mainManagedObjectContext.performAndWait {
+      do {
+        if self.mainManagedObjectContext.hasChanges {
+          try self.mainManagedObjectContext.save()
+        }
+      } catch {
+        print("Unable to Save Changes of Main Managed Object Context")
+        print("\(error), \(error.localizedDescription)")
+      }
     }
     
+    privateManagedObjectContext.perform {
+      do {
+        if self.privateManagedObjectContext.hasChanges {
+          try self.privateManagedObjectContext.save()
+        }
+      } catch {
+        print("Unable to Save Changes of Private Managed Object Context")
+        print("\(error), \(error.localizedDescription)")
+      }
+    }
   }
+  
 }
