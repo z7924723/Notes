@@ -22,7 +22,7 @@ class NotesViewController: UIViewController {
   }
   
   // MARK: -
-  private var coreDataManager = CoreDataManager(modelName: "Notes")
+  private var persistentContainer = NSPersistentContainer(name: "Notes")
   
   // MARK: -
   private lazy var fetchedResultsController: NSFetchedResultsController<Note> = {
@@ -34,7 +34,7 @@ class NotesViewController: UIViewController {
     
     // Create Fetched Results Controller
     let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
-                                                              managedObjectContext: self.coreDataManager.mainManagedObjectContext,
+                                                              managedObjectContext: self.persistentContainer.viewContext,
                                                               sectionNameKeyPath: nil,
                                                               cacheName: nil)
     
@@ -87,7 +87,7 @@ class NotesViewController: UIViewController {
       }
       
       // Configure Destination
-      destination.managedObjectContext = coreDataManager.mainManagedObjectContext
+      destination.managedObjectContext = persistentContainer.viewContext
       
     case Segue.Note:
       guard let destination = segue.destination as? NoteViewController else {
@@ -196,7 +196,7 @@ extension NotesViewController: UITableViewDataSource {
     let note = fetchedResultsController.object(at: indexPath)
     
     // Delete Note
-    coreDataManager.mainManagedObjectContext.delete(note)
+    persistentContainer.viewContext.delete(note)
   }
 }
 
