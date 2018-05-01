@@ -12,8 +12,10 @@ import CoreData
 class NotesViewController: UIViewController {
   
   // MARK: - Properties
+  @IBOutlet weak var notesView: UIView!
   @IBOutlet weak var messageLabel: UILabel!
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
   
   // MARK: - Segues
   private enum Segue {
@@ -69,11 +71,16 @@ class NotesViewController: UIViewController {
     
     title = "Notes"
     
-    setupView()
-    
-    fetchNotes()
-    
-    updateView()
+    persistentContainer.loadPersistentStores { (persistentStoreDescription, error) in
+      if let error = error {
+        print("Unable to Add Persistent Store")
+        print("\(error), \(error.localizedDescription)")
+      } else {
+        self.setupView()
+        self.fetchNotes()
+        self.updateView()
+      }
+    }
   }
   
   // MARK: - Navigation
@@ -111,6 +118,9 @@ class NotesViewController: UIViewController {
   
   // MARK: - View Methods
   private func setupView() {
+    activityIndicatorView.stopAnimating()
+    notesView.isHidden = false
+    
     setupMessageLabel()
     setupTableView()
   }
