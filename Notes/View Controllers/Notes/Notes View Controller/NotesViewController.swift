@@ -71,6 +71,8 @@ class NotesViewController: UIViewController {
     
     title = "Notes"
     
+    setupNotificationHandling()
+    
     persistentContainer.loadPersistentStores { (persistentStoreDescription, error) in
       if let error = error {
         print("Unable to Add Persistent Store")
@@ -151,6 +153,28 @@ class NotesViewController: UIViewController {
       print("\(error), \(error.localizedDescription)")
     }
     
+  }
+  
+  private func setupNotificationHandling() {
+    let notificationCenter = NotificationCenter.default
+    notificationCenter.addObserver(self,
+                                   selector: #selector(saveChanges(_:)),
+                                   name: Notification.Name.UIApplicationWillTerminate,
+                                   object: nil)
+    notificationCenter.addObserver(self,
+                                   selector: #selector(saveChanges(_:)),
+                                   name: Notification.Name.UIApplicationDidEnterBackground,
+                                   object: nil)
+  }
+  
+  // MARK: -
+  @objc private func saveChanges(_ notification: Notification) {
+    do {
+      try persistentContainer.viewContext.save()
+    } catch {
+      print("Unable to Save Changes Persistent Container")
+      print("\(error), \(error.localizedDescription)")
+    }
   }
   
   override func didReceiveMemoryWarning() {
