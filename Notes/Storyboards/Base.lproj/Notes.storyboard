@@ -107,6 +107,16 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="zH7-ok-wQa"/>
                                         </connections>
                                     </tableView>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHF-5h-838">
+                                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                        <items>
+                                            <barButtonItem systemItem="add" id="Tt1-YZ-Gha">
+                                                <connections>
+                                                    <segue destination="d8Y-yN-kxS" kind="show" identifier="AddNote" id="pJu-ge-6mb"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -117,6 +127,9 @@
                                     <constraint firstItem="7nQ-rr-uA2" firstAttribute="leading" secondItem="IEm-yt-09U" secondAttribute="leading" constant="20" id="MfI-KQ-dFI"/>
                                     <constraint firstItem="7nQ-rr-uA2" firstAttribute="centerY" secondItem="IEm-yt-09U" secondAttribute="centerY" constant="-32" id="P3T-SW-icn"/>
                                     <constraint firstAttribute="trailing" secondItem="cc8-Bd-5AD" secondAttribute="trailing" id="fIL-Sm-P5v"/>
+                                    <constraint firstAttribute="trailing" secondItem="AHF-5h-838" secondAttribute="trailing" id="mMg-ak-FdS"/>
+                                    <constraint firstItem="AHF-5h-838" firstAttribute="bottom" secondItem="cc8-Bd-5AD" secondAttribute="bottom" id="ovh-pM-bXZ"/>
+                                    <constraint firstItem="AHF-5h-838" firstAttribute="leading" secondItem="IEm-yt-09U" secondAttribute="leading" id="zbE-z6-9M9"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -133,10 +146,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="7lj-7H-9As">
                         <barButtonItem key="backBarButtonItem" title=" " id="1lN-8z-Nzd"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="REf-UW-XEx">
-                            <connections>
-                                <segue destination="d8Y-yN-kxS" kind="show" identifier="AddNote" id="LMQ-QL-hlf"/>
-                            </connections>
+                        <barButtonItem key="rightBarButtonItem" image="setting" id="REf-UW-XEx">
+                            <color key="tintColor" red="0.99215686274509807" green="0.47450980392156861" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -363,4 +374,7 @@
             <point key="canvasLocation" x="133.59999999999999" y="-564.46776611694156"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="setting" width="32" height="32"/>
+    </resources>
 </document>
