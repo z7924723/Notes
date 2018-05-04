@@ -16,6 +16,7 @@ class NotesViewController: UIViewController {
   @IBOutlet weak var messageLabel: UILabel!
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+  var searchController: UISearchController!
   
   // MARK: - Segues
   private enum Segue {
@@ -125,6 +126,7 @@ class NotesViewController: UIViewController {
     
     setupMessageLabel()
     setupTableView()
+    configureSearchController()
   }
   
   private func updateView() {
@@ -135,6 +137,16 @@ class NotesViewController: UIViewController {
   // MARK: -
   private func setupMessageLabel() {
     messageLabel.text = "You don't have any notes yet."
+  }
+  
+  // MARK: -
+  private func configureSearchController() {
+    searchController = UISearchController(searchResultsController: nil)
+    searchController.searchBar.placeholder = "Search here..."
+    searchController.dimsBackgroundDuringPresentation = false
+    
+    navigationItem.searchController = searchController
+    navigationItem.hidesSearchBarWhenScrolling = false
   }
   
   // MARK: -
