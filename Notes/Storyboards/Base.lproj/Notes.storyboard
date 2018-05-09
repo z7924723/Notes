@@ -110,6 +110,7 @@
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHF-5h-838">
                                         <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                         <items>
+                                            <barButtonItem width="20" style="plain" systemItem="fixedSpace" id="zKO-Da-LL5"/>
                                             <barButtonItem systemItem="add" id="Tt1-YZ-Gha">
                                                 <connections>
                                                     <segue destination="d8Y-yN-kxS" kind="show" identifier="AddNote" id="pJu-ge-6mb"/>
@@ -148,6 +149,9 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="1lN-8z-Nzd"/>
                         <barButtonItem key="rightBarButtonItem" image="setting" id="REf-UW-XEx">
                             <color key="tintColor" red="0.99215686274509807" green="0.47450980392156861" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="YCJ-M6-xXn" kind="presentation" identifier="Setting" id="mLx-gn-ycG"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -269,7 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VLC-LZ-oJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1709.5999999999999" y="-159.67016491754123"/>
+            <point key="canvasLocation" x="1878" y="-161"/>
         </scene>
         <!--Categories-->
         <scene sceneID="yjz-2k-Ntg">
@@ -286,6 +290,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LzI-DJ-hni" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2402" y="-139"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="3hd-hZ-Yaw">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Setting" id="YCJ-M6-xXn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wm3-rC-coV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1461" y="-1019"/>
         </scene>
         <!--Add Note View Controller-->
         <scene sceneID="4Ij-8L-CeK">
@@ -318,7 +330,8 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dmv-UE-zDK">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Item" id="AnE-tp-laN"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ye5-UC-2Hn"/>
+                                    <barButtonItem systemItem="camera" id="ggh-qs-IzN"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -353,7 +366,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fFz-X6-bqt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1706" y="-861"/>
+            <point key="canvasLocation" x="1878" y="-862"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KEa-vi-EJZ">

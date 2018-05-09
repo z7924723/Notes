@@ -119,6 +119,10 @@ class NotesViewController: UIViewController {
     }
   }
   
+  // MARK: - Unwind Method
+  @IBAction func unwindToNotesViewController(segue: UIStoryboardSegue) {
+  }
+  
   // MARK: - View Methods
   private func setupView() {
     activityIndicatorView.stopAnimating()

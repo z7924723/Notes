@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14133" systemVersion="17E202" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
         <attribute name="colorAsHex" attributeType="String" defaultValueString="FFFFFF" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
@@ -19,7 +19,7 @@
     </entity>
     <elements>
         <element name="Category" positionX="-81" positionY="-154" width="128" height="90"/>
-        <element name="Note" positionX="-344" positionY="-237" width="128" height="133"/>
+        <element name="Note" positionX="-344" positionY="-237" width="128" height="135"/>
         <element name="Tag" positionX="-209" positionY="45" width="128" height="73"/>
     </elements>
 </model>

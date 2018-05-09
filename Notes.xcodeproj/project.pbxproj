@@ -30,6 +30,8 @@
 		70B68713207F5E590086B15B /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B68712207F5E590086B15B /* TagsViewController.swift */; };
 		70B68715207F60130086B15B /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B68714207F60130086B15B /* TagViewController.swift */; };
 		70B68717207F60CB0086B15B /* AddTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B68716207F60CB0086B15B /* AddTagViewController.swift */; };
+		70EEB4A3209C45A90008CA28 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70EEB4A2209C45A90008CA28 /* Setting.storyboard */; };
+		70EEB4A6209C467B0008CA28 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EEB4A5209C467B0008CA28 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		70B68712207F5E590086B15B /* TagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
 		70B68714207F60130086B15B /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
 		70B68716207F60CB0086B15B /* AddTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagViewController.swift; sourceTree = "<group>"; };
+		70EEB4A2209C45A90008CA28 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		70EEB4A5209C467B0008CA28 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,7 @@
 		70935AD4207386C000C05F67 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				70EEB4A4209C45F80008CA28 /* Setting */,
 				70B6870A207E03D80086B15B /* Tags */,
 				70662C74207B599100521B99 /* Categories */,
 				70662C73207B597800521B99 /* Notes */,
@@ -216,6 +221,7 @@
 				70662C71207B551900521B99 /* Categories.storyboard */,
 				70935ACB2073866A00C05F67 /* LaunchScreen.storyboard */,
 				70B68710207F5AF50086B15B /* Tags.storyboard */,
+				70EEB4A2209C45A90008CA28 /* Setting.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -287,6 +293,14 @@
 			path = "Add Tag View Controller";
 			sourceTree = "<group>";
 		};
+		70EEB4A4209C45F80008CA28 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				70EEB4A5209C467B0008CA28 /* SettingViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -350,6 +364,7 @@
 				70935ACA2073866A00C05F67 /* Assets.xcassets in Resources */,
 				70662C72207B551900521B99 /* Categories.storyboard in Resources */,
 				70935AC82073866800C05F67 /* Notes.storyboard in Resources */,
+				70EEB4A3209C45A90008CA28 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +391,7 @@
 				70762C06207BB25100D073ED /* UIColor.swift in Sources */,
 				70B6870F207E69BE0086B15B /* Category.swift in Sources */,
 				70662C6A207605F700521B99 /* NoteTableViewCell.swift in Sources */,
+				70EEB4A6209C467B0008CA28 /* SettingViewController.swift in Sources */,
 				70662C7A207B5E1A00521B99 /* CategoryViewController.swift in Sources */,
 				7032945820747D00003E9F6A /* Notes.xcdatamodeld in Sources */,
 			);
