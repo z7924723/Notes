@@ -258,27 +258,31 @@ extension NotesViewController: UITableViewDelegate {
   }
   
   func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    
+    // Fetch Note
+    let note = self.fetchedResultsController.object(at: indexPath)
+    
     let lockAction =  UIContextualAction(style: .normal, title: "LockData") { (action, sourceView, completionHandler) in
-      // Fetch Note
-      let note = self.fetchedResultsController.object(at: indexPath)
-      note.isLock = true
+
+      note.isLock = !(note.isLock)
       
       completionHandler(true)
     }
-    lockAction.image = UIImage(named: "tableLock.png")
+    
+    if note.isLock {
+      lockAction.image = UIImage(named: "TableLock.png")
+    } else {
+      lockAction.image = UIImage(named: "TableUnlock.png")
+    }
     lockAction.backgroundColor = UIColor.gray
 
     let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
-      // Fetch Note
-      let note = self.fetchedResultsController.object(at: indexPath)
-      
       // Delete Note
       self.persistentContainer.viewContext.delete(note)
       completionHandler(true)
     }
     deleteAction.image = UIImage(named: "tableDelete.png")
     deleteAction.backgroundColor = UIColor.red
-
 
     let confrigation = UISwipeActionsConfiguration(actions: [deleteAction, lockAction])
 

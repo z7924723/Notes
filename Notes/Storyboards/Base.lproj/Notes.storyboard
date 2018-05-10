@@ -31,7 +31,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cc8-Bd-5AD">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteTableViewCell" rowHeight="90" id="DXj-TO-2nq" customClass="NoteTableViewCell" customModule="Notes" customModuleProvider="target">
@@ -122,15 +122,18 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="cc8-Bd-5AD" secondAttribute="bottom" id="9H7-8Y-BHn"/>
-                                    <constraint firstItem="cc8-Bd-5AD" firstAttribute="leading" secondItem="IEm-yt-09U" secondAttribute="leading" id="FtD-EN-2qR"/>
+                                    <constraint firstItem="AHF-5h-838" firstAttribute="top" secondItem="cc8-Bd-5AD" secondAttribute="bottom" id="62B-j8-aVc"/>
+                                    <constraint firstAttribute="trailing" secondItem="cc8-Bd-5AD" secondAttribute="trailing" id="8Nu-d0-Xpb"/>
+                                    <constraint firstItem="AHF-5h-838" firstAttribute="top" secondItem="cc8-Bd-5AD" secondAttribute="bottom" id="Epe-D0-g2w"/>
                                     <constraint firstAttribute="trailing" secondItem="7nQ-rr-uA2" secondAttribute="trailing" constant="20" id="HX5-GE-92W"/>
-                                    <constraint firstItem="cc8-Bd-5AD" firstAttribute="top" secondItem="IEm-yt-09U" secondAttribute="top" id="IMt-P8-wIa"/>
+                                    <constraint firstAttribute="bottom" secondItem="AHF-5h-838" secondAttribute="bottom" id="I0J-SW-kfL"/>
                                     <constraint firstItem="7nQ-rr-uA2" firstAttribute="leading" secondItem="IEm-yt-09U" secondAttribute="leading" constant="20" id="MfI-KQ-dFI"/>
+                                    <constraint firstAttribute="trailing" secondItem="AHF-5h-838" secondAttribute="trailing" id="NIU-nT-lDX"/>
+                                    <constraint firstItem="cc8-Bd-5AD" firstAttribute="top" secondItem="IEm-yt-09U" secondAttribute="top" id="Owh-vY-RQw"/>
                                     <constraint firstItem="7nQ-rr-uA2" firstAttribute="centerY" secondItem="IEm-yt-09U" secondAttribute="centerY" constant="-32" id="P3T-SW-icn"/>
-                                    <constraint firstAttribute="trailing" secondItem="cc8-Bd-5AD" secondAttribute="trailing" id="fIL-Sm-P5v"/>
+                                    <constraint firstItem="cc8-Bd-5AD" firstAttribute="leading" secondItem="IEm-yt-09U" secondAttribute="leading" id="Q43-cv-90X"/>
+                                    <constraint firstItem="AHF-5h-838" firstAttribute="leading" secondItem="IEm-yt-09U" secondAttribute="leading" id="biN-ey-PaU"/>
                                     <constraint firstAttribute="trailing" secondItem="AHF-5h-838" secondAttribute="trailing" id="mMg-ak-FdS"/>
-                                    <constraint firstItem="AHF-5h-838" firstAttribute="bottom" secondItem="cc8-Bd-5AD" secondAttribute="bottom" id="ovh-pM-bXZ"/>
                                     <constraint firstItem="AHF-5h-838" firstAttribute="leading" secondItem="IEm-yt-09U" secondAttribute="leading" id="zbE-z6-9M9"/>
                                 </constraints>
                             </view>
@@ -235,6 +238,11 @@
                                     <segue destination="mct-8d-kSl" kind="show" identifier="Tags" id="fmu-UX-xPE"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NIr-XW-cgR">
+                                <rect key="frame" x="0.0" y="65" width="375" height="602"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -274,7 +282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VLC-LZ-oJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1878" y="-161"/>
+            <point key="canvasLocation" x="1877.5999999999999" y="-161.46926536731635"/>
         </scene>
         <!--Categories-->
         <scene sceneID="yjz-2k-Ntg">
