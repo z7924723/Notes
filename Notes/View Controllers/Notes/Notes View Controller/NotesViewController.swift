@@ -147,10 +147,10 @@ class NotesViewController: UIViewController {
   private func configureSearchController() {
     searchController = UISearchController(searchResultsController: nil)
     searchController.searchBar.placeholder = "Search here..."
-    searchController.dimsBackgroundDuringPresentation = false
-    
+    searchController.dimsBackgroundDuringPresentation = true
+
     navigationItem.searchController = searchController
-    navigationItem.hidesSearchBarWhenScrolling = false
+    navigationItem.hidesSearchBarWhenScrolling = true
   }
   
   // MARK: -
@@ -171,6 +171,7 @@ class NotesViewController: UIViewController {
     
   }
   
+  // MARK: -
   private func setupNotificationHandling() {
     let notificationCenter = NotificationCenter.default
     notificationCenter.addObserver(self,
@@ -258,6 +259,10 @@ extension NotesViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
     let lockAction =  UIContextualAction(style: .normal, title: "LockData") { (action, sourceView, completionHandler) in
+      // Fetch Note
+      let note = self.fetchedResultsController.object(at: indexPath)
+      note.isLock = true
+      
       completionHandler(true)
     }
     lockAction.image = UIImage(named: "tableLock.png")

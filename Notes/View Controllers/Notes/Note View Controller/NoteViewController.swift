@@ -107,6 +107,7 @@ class NoteViewController: UIViewController {
   private func setupTitleTextField() {
     // Configure Title Text Field
     titleTextField.text = note?.title
+    print("isLock:", note?.isLock)
   }
   
   private func setupContentsTextView() {

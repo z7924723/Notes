@@ -61,6 +61,7 @@ class AddNoteViewController: UIViewController {
     note.updatedAt = Date()
     note.title = title
     note.contents = contentsTextView.text
+    note.isLock = false
     
     // Pop View Controller
     _ = navigationController?.popViewController(animated: true)
