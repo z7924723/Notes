@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Notes View Controller-->
+        <!--Notes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="NotesViewController" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,7 +98,7 @@
                                                     <outlet property="tagsLabel" destination="vCp-Pa-LWY" id="UHK-d5-HBw"/>
                                                     <outlet property="titleLabel" destination="R8V-NG-GwU" id="JBh-CV-FhM"/>
                                                     <outlet property="updatedAtLabel" destination="8UC-Bh-ck7" id="eDJ-bh-jpa"/>
-                                                    <segue destination="sDX-KX-ObP" kind="show" identifier="Note" id="Sjn-KK-Qf8"/>
+                                                    <segue destination="sDX-KX-ObP" kind="show" identifier="Note" id="BQs-VG-jrB"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -149,8 +149,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7lj-7H-9As">
-                        <barButtonItem key="backBarButtonItem" title=" " id="1lN-8z-Nzd"/>
+                    <navigationItem key="navigationItem" title="Notes" id="7lj-7H-9As">
                         <barButtonItem key="rightBarButtonItem" image="setting" id="REf-UW-XEx">
                             <color key="tintColor" red="0.99215686274509807" green="0.47450980392156861" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -238,17 +237,35 @@
                                     <segue destination="mct-8d-kSl" kind="show" identifier="Tags" id="fmu-UX-xPE"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NIr-XW-cgR">
-                                <rect key="frame" x="0.0" y="65" width="375" height="602"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NIr-XW-cgR" userLabel="Lock View">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fingerprint" translatesAutoresizingMaskIntoConstraints="NO" id="rGk-e6-0ls" userLabel="Finger Print View">
+                                        <rect key="frame" x="123" y="237.5" width="128" height="128"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="TgA-I5-7qj"/>
+                                            <constraint firstAttribute="width" constant="128" id="rN1-ne-Ujq"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="bv6-09-Z3m" appends="YES" id="H3R-db-rMm"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="rGk-e6-0ls" firstAttribute="centerX" secondItem="NIr-XW-cgR" secondAttribute="centerX" id="KZi-rs-isM"/>
+                                    <constraint firstItem="rGk-e6-0ls" firstAttribute="centerY" secondItem="NIr-XW-cgR" secondAttribute="centerY" id="cSj-9L-Bfr"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="R8t-sp-8uj" firstAttribute="top" secondItem="KQm-Wg-Ejd" secondAttribute="bottom" constant="4" id="1rD-Cc-dqe"/>
                             <constraint firstItem="GPI-JJ-Kg9" firstAttribute="top" secondItem="IqU-Od-bPX" secondAttribute="bottom" constant="4" id="46m-Ou-lnh"/>
+                            <constraint firstItem="NIr-XW-cgR" firstAttribute="trailing" secondItem="Jke-Sz-hg1" secondAttribute="trailing" id="977-pT-K39"/>
                             <constraint firstItem="Jke-Sz-hg1" firstAttribute="trailing" secondItem="EaF-1Z-ykA" secondAttribute="trailing" constant="20" id="9MQ-1D-pzM"/>
+                            <constraint firstItem="NIr-XW-cgR" firstAttribute="bottom" secondItem="Jke-Sz-hg1" secondAttribute="bottom" id="B4q-Ud-qT0"/>
                             <constraint firstItem="IqU-Od-bPX" firstAttribute="top" secondItem="D2q-UL-vBy" secondAttribute="top" id="FR9-qT-jX6"/>
                             <constraint firstItem="GPI-JJ-Kg9" firstAttribute="leading" secondItem="EaF-1Z-ykA" secondAttribute="leading" id="Gmd-yI-2ve"/>
                             <constraint firstItem="GPI-JJ-Kg9" firstAttribute="bottom" secondItem="D2q-UL-vBy" secondAttribute="bottom" id="P3u-iN-GnE"/>
@@ -258,6 +275,7 @@
                             <constraint firstItem="D2q-UL-vBy" firstAttribute="leading" secondItem="GPI-JJ-Kg9" secondAttribute="trailing" constant="8" symbolic="YES" id="eag-19-k7O"/>
                             <constraint firstItem="5Gn-0Y-P02" firstAttribute="leading" secondItem="D2q-UL-vBy" secondAttribute="leading" id="fAb-ud-Yfd"/>
                             <constraint firstItem="KQm-Wg-Ejd" firstAttribute="top" secondItem="5Gn-0Y-P02" secondAttribute="top" id="fUA-mP-XMl"/>
+                            <constraint firstItem="NIr-XW-cgR" firstAttribute="leading" secondItem="Jke-Sz-hg1" secondAttribute="leading" id="hm3-wz-9G2"/>
                             <constraint firstItem="Jke-Sz-hg1" firstAttribute="bottom" secondItem="EaF-1Z-ykA" secondAttribute="bottom" constant="20" id="i3s-9I-XZK"/>
                             <constraint firstItem="KQm-Wg-Ejd" firstAttribute="leading" secondItem="rGt-I0-Lnt" secondAttribute="leading" id="iGM-Ra-zUC"/>
                             <constraint firstItem="IqU-Od-bPX" firstAttribute="leading" secondItem="GPI-JJ-Kg9" secondAttribute="leading" id="iZV-er-JYY"/>
@@ -270,19 +288,33 @@
                             <constraint firstItem="EaF-1Z-ykA" firstAttribute="top" secondItem="GPI-JJ-Kg9" secondAttribute="bottom" constant="8" id="qbM-w9-Zbb"/>
                             <constraint firstItem="D2q-UL-vBy" firstAttribute="trailing" secondItem="EaF-1Z-ykA" secondAttribute="trailing" id="rt6-Fp-Ewy"/>
                             <constraint firstItem="KQm-Wg-Ejd" firstAttribute="top" secondItem="rGt-I0-Lnt" secondAttribute="bottom" constant="8" symbolic="YES" id="sfZ-tz-Dn1"/>
+                            <constraint firstItem="NIr-XW-cgR" firstAttribute="top" secondItem="Jke-Sz-hg1" secondAttribute="top" id="u4M-gG-TaP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jke-Sz-hg1"/>
                     </view>
+                    <navigationItem key="navigationItem" id="V1J-wp-6EW">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="w7i-xo-efy" userLabel="Lock Button">
+                            <connections>
+                                <action selector="didTapLock:" destination="sDX-KX-ObP" id="e97-YI-9tq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="categoryLabel" destination="R8t-sp-8uj" id="gQW-Iw-YiK"/>
                         <outlet property="contentsTextView" destination="EaF-1Z-ykA" id="8El-y2-82D"/>
+                        <outlet property="lockView" destination="NIr-XW-cgR" id="Lfb-KV-klc"/>
                         <outlet property="tagsLabel" destination="GPI-JJ-Kg9" id="e3T-db-Ke1"/>
                         <outlet property="titleTextField" destination="rGt-I0-Lnt" id="Q5o-0k-DBc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VLC-LZ-oJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="bv6-09-Z3m">
+                    <connections>
+                        <action selector="didTapAuthCheck:" destination="sDX-KX-ObP" id="qjb-Ko-ebV"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1877.5999999999999" y="-161.46926536731635"/>
+            <point key="canvasLocation" x="1878" y="-134"/>
         </scene>
         <!--Categories-->
         <scene sceneID="yjz-2k-Ntg">
@@ -290,7 +322,7 @@
                 <viewControllerPlaceholder storyboardName="Categories" id="lL2-bh-A9U" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yro-eW-nJ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2432" y="-183"/>
+            <point key="canvasLocation" x="2432" y="-157"/>
         </scene>
         <!--Tags-->
         <scene sceneID="2sW-1A-owZ">
@@ -298,7 +330,7 @@
                 <viewControllerPlaceholder storyboardName="Tags" id="mct-8d-kSl" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LzI-DJ-hni" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2402" y="-139"/>
+            <point key="canvasLocation" x="2401" y="-112"/>
         </scene>
         <!--Setting-->
         <scene sceneID="3hd-hZ-Yaw">
@@ -306,7 +338,7 @@
                 <viewControllerPlaceholder storyboardName="Setting" id="YCJ-M6-xXn" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wm3-rC-coV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1461" y="-1019"/>
+            <point key="canvasLocation" x="1462" y="-1039"/>
         </scene>
         <!--Add Note View Controller-->
         <scene sceneID="4Ij-8L-CeK">
@@ -399,6 +431,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Fingerprint" width="128" height="128"/>
         <image name="setting" width="32" height="32"/>
     </resources>
     <color key="tintColor" red="0.99215686270000003" green="0.47450980390000003" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>

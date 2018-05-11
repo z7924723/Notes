@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import LocalAuthentication
 
 class NoteViewController: UIViewController {
   
@@ -16,6 +17,7 @@ class NoteViewController: UIViewController {
   @IBOutlet weak var categoryLabel: UILabel!
   @IBOutlet weak var titleTextField: UITextField!
   @IBOutlet weak var contentsTextView: UITextView!
+  @IBOutlet weak var lockView: UIView!
   
   // MARK: - Segues
   private enum Segue {
@@ -87,6 +89,7 @@ class NoteViewController: UIViewController {
   
   // MARK: - View Methods
   private func setupView() {
+    setupLockView()
     setupTagsLabel()
     setupCategoryLabel()
     setupTitleTextField()
@@ -94,6 +97,16 @@ class NoteViewController: UIViewController {
   }
   
   // MARK: -
+  private func setupLockView() {
+    if (note?.isLock)! {
+      lockView.isHidden = false
+      self.navigationItem.rightBarButtonItems![0].image = UIImage(named: "TableLock.png")
+    } else {
+      lockView.isHidden = true
+      self.navigationItem.rightBarButtonItems![0].image = UIImage(named: "TableUnlock.png")
+    }
+  }
+  
   private func setupTagsLabel() {
     updateTagsLabel()
   }
@@ -150,6 +163,38 @@ class NoteViewController: UIViewController {
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+  }
+  
+  // MARK: - Tap Gesture Action
+  @IBAction func didTapAuthCheck(_ sender: Any) {
+    let laContext: LAContext = LAContext()
+    
+    if laContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
+      laContext.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: "Unlock with finger print") { (wasCorrect, error) in
+        if wasCorrect {
+          DispatchQueue.main.async {
+            self.note?.isLock = false
+            self.lockView.isHidden = true
+            self.navigationItem.rightBarButtonItems![0].image = UIImage(named: "TableUnlock.png")
+          }
+        } else {
+          print(error.debugDescription)
+          return
+        }
+      }
+    } else {
+      print("not support touch id")
+    }
+  }
+  
+  @IBAction func didTapLock(_ sender: Any) {
+    guard note?.isLock == true else {
+      self.navigationItem.rightBarButtonItems![0].image = UIImage(named: "TableLock.png")
+      self.lockView.isHidden = false
+      self.note?.isLock = true
+      return
+    }
+    didTapAuthCheck(note?.isLock)
   }
   
 }
